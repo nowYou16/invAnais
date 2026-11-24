@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Una invitación para Anais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="sky" aria-hidden="true"></div>
+<main>
+
+<section id="s-env" class="screen active">
+  <p class="hint">Anais, te llegó una carta</p>
+  <div class="envelope" id="env">
+    <div class="flap"></div>
+    <div class="pocket"></div>
+    <button class="seal" id="seal" aria-label="Abrir el sobre">🎀</button>
+  </div>
+  <p class="hint small">Toca el sello para abrirla</p>
+</section>
+
+<section id="s-letter" class="screen">
+  <article class="letter">
+    <h1>Hola Anais</h1>
+    <p>No nos conocemos, pero me gustaría invitarte a <strong>comer</strong> y, después, al <strong>cine</strong>.</p>
+    <p>Yo pongo el plan y tú decides si te animas.</p>
+    <p>Todo en buena onda, no te preocupes. Vi tu perfil hace unos días, te me hiciste linda y no estaba seguro si hablarte o invitarte. Hoy me decidí y aquí estoy.</p>
+    <p class="sign">Miguel</p>
+    <div class="nav stack">
+      <button class="btn" id="start">Aceptar</button>
+      <button class="btn ghost" id="decline">Por ahora no</button>
+    </div>
+  </article>
+</section>
+
+<section id="s-form" class="screen">
+  <div class="card">
+    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="6"><i id="fill"></i></div>
+    <p id="count" class="count"></p>
+    <h2 id="q"></h2>
+    <div id="opts" class="opts"></div>
+    <p id="note" class="note" aria-live="polite"></p>
+    <p id="err" class="err" role="alert"></p>
+    <div class="nav">
+      <button class="btn ghost" id="back">Atrás</button>
+      <button class="btn" id="next">Siguiente</button>
+    </div>
+  </div>
+</section>
+
+<section id="s-game" class="screen">
+  <div class="card center">
+    <div class="rules">
+      <p>Este es el típico juego de ahorcados. Tienes dos oportunidades. Si no adivinas, perderás, y te diré quién soy justamente el día de la cita.</p>
+    </div>
+    <h2>¿Quieres saber quién soy?</h2>
+    <p class="word" id="word" aria-label="Palabra oculta"></p>
+    <div class="gallows" aria-hidden="true">
+      <svg viewBox="0 0 120 150" width="120" height="150">
+        <line x1="10" y1="145" x2="110" y2="145"/>
+        <line x1="30" y1="145" x2="30" y2="10"/>
+        <line x1="30" y1="10" x2="80" y2="10"/>
+        <g id="man" class="man">
+          <line id="p0" x1="80" y1="10" x2="80" y2="24"/>
+          <circle id="p1" cx="80" cy="34" r="10"/>
+          <line id="p2" x1="80" y1="44" x2="80" y2="92"/>
+          <line id="p3" x1="80" y1="56" x2="66" y2="72"/>
+          <line id="p4" x1="80" y1="56" x2="94" y2="72"/>
+          <line id="p5" x1="80" y1="92" x2="68" y2="118"/>
+          <line id="p6" x1="80" y1="92" x2="92" y2="118"/>
+        </g>
+      </svg>
+    </div>
+    <div class="keys" id="keys"></div>
+    <p id="gmsg" class="note" aria-live="polite"></p>
+    <div class="nav stack">
+      <button class="btn" id="gameBack">Sí acepto la invitación</button>
+    </div>
+  </div>
+</section>
+
+<section id="s-sum" class="screen">
+  <div class="card">
+    <h2>Tu plan, Anais</h2>
+    <ul id="list" class="list"></ul>
+    <label class="cm" for="comment">Dime qué piensas de la invitación</label>
+    <textarea id="comment" rows="3" maxlength="400" placeholder="Escribe aquí lo que quieras decirme…"></textarea>
+    <div class="nav stack">
+      <button class="btn ghost" id="edit">Modificar mis respuestas</button>
+      <button class="btn" id="accept">Aceptar</button>
+    </div>
+  </div>
+</section>
+
+<section id="s-no" class="screen">
+  <div class="card center thanks">
+    <div class="big">✦</div>
+    <h2>Será en otra oportunidad</h2>
+    <p class="lead">Gracias por pensarlo, Anais. Sin presión.</p>
+    <a id="wa-no" class="btn" target="_blank" rel="noopener">Rechazar invitación</a>
+    <button class="btn ghost" id="undo" style="margin-top:12px;width:100%">Mejor sí quiero ver las opciones</button>
+  </div>
+</section>
+
+<section id="s-end" class="screen">
+  <div class="card center thanks">
+    <div class="big">✦</div>
+    <h2>Gracias por aceptar</h2>
+    <p class="lead">Prometo que la pasaremos muy bien.</p>
+    <a id="wa" class="btn" target="_blank" rel="noopener">Aceptar invitación</a>
+  </div>
+</section>
+
+</main>
+<script src="script.js"></script>
+</body>
+</html>
